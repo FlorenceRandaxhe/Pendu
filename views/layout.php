@@ -5,12 +5,12 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Le pendu</title>  <!-- à rendre dynamique -->
+    <title><?= GAME_TITLE ?></title>  <!-- à rendre dynamique -->
 </head>
 <body>
 
     <div>
-        <h1>Le Pendu : trouve le mot en moins de X coups !</h1>
+        <h1><?= GAME_TITLE ?> : trouve le mot en moins de <?= MAX_TRIALS ?> coups !</h1>
     </div>
 
     <div>
