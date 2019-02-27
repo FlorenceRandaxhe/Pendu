@@ -1,7 +1,7 @@
 <form action="index.php" method="post">
     <fieldset>
         <legend>
-            Il te reste X essais pour sauver ta peau
+            Il te reste <?= $remainingTrials ?> essais pour sauver ta peau
         </legend>
 
         <div>
@@ -15,6 +15,11 @@
                 <?php endforeach; ?>
             </select>
             <input type="hidden" name="lettersArray" value="<?= $serializedLettersArray; ?>">
+            <input type="hidden" name="wordIndex" value="<?= $wordIndex; ?>">
+            <input type="hidden" name="lettersCount" value="<?= $lettersCount; ?>">
+            <input type="hidden" name="replacementString" value="<?= $replacementString; ?>">
+            <input type="hidden" name="triedLetters" value="<?= $triedLetters; ?>">
+            <input type="hidden" name="trials" value="<?= $trials; ?>">
             <input type="submit" value="Essayer la lettre">
         </div>
     </fieldset>

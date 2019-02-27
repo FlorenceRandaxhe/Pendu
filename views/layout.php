@@ -14,17 +14,32 @@
     </div>
 
     <div>
-        <p>Le mot à deviner compte X lettres : *********</p>
+        <p>Le mot à deviner compte <?= $lettersCount; ?> lettres : <?= $replacementString; ?></p>
     </div>
 
     <div>
-        <img src="images/pendu0.gif" srcset="" alt="">
+        <img src="images/pendu<?= $trials; ?>" srcset="" alt="">
+    </div>
+    <div>
+        <p>Voici les lettres que tu as déjà essayées : <?= $triedLetters; ?></p>
     </div>
 
     <div>
-        <!-- si on joue, insérer le formulaire -->
-        <?php include 'partials/form.php'; ?>
+        <?php if ($gameOver){
+            // si game over est true, on affiche le failure (pour ne plus savoir jouer)
+            include 'partials/failure.php';
+        } elseif ($gameWon) {
+            // si le jeu est gagné, on afiche le succes
+            include 'partials/succes.php';
+        } else {
+            // game over est false, on affiche le formulaire
+            include 'partials/form.php';
+        }
+        ?>
+
+
         <!-- si on a perdu, insérer le message de défaite -->
+
         <!-- si on a gagner, inséere le message de victoire -->
 
     </div>
